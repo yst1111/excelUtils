@@ -9,7 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest
 public class Tests {
+    public static void main(String[] args) {
 
+    }
     @Test
     public void showTest() {
         System.out.println("this is a test");
