@@ -90,7 +90,7 @@ public class TtlProductInfoServiceImpl implements TtlProductInfoService {
 
         int totalNum = 500000;
         int loopNum = new Double(Math.ceil((double) totalNum / THREAD_MAX_ROW)).intValue();
-        log.info("多线程查询，总数：{},开启线程数：{}", totalNum, loopNum);
+//        log.info("多线程查询，总数：{},开启线程数：{}", totalNum, loopNum);
         long start = System.currentTimeMillis();
 
         executeTask(tasks, loopNum, totalNum);
@@ -103,7 +103,7 @@ public class TtlProductInfoServiceImpl implements TtlProductInfoService {
             }
         }
 
-        log.info("查询结束，耗时:{}", System.currentTimeMillis() - start);
+//        log.info("查询结束，耗时:{}", System.currentTimeMillis() - start);
         return productInfoPos;
     }
 
@@ -118,7 +118,7 @@ public class TtlProductInfoServiceImpl implements TtlProductInfoService {
                 map.put("limit", THREAD_MAX_ROW);
             }
             FutureTask<List<TtlProductInfoPo>> task = new FutureTask<>(new listThread(map));
-            log.info("开始查询第{}条开始的{}条记录", i * THREAD_MAX_ROW, THREAD_MAX_ROW);
+//            log.info("开始查询第{}条开始的{}条记录", i * THREAD_MAX_ROW, THREAD_MAX_ROW);
             new Thread(task).start();
             // 将任务添加到tasks列表中
             tasks.add(task);
