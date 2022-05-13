@@ -10,8 +10,8 @@ import lombok.experimental.Accessors;
  * excel表头信息
  */
 
-@Data
-@AllArgsConstructor
+//@Data
+//@AllArgsConstructor
 @Accessors(chain = true)
 public class ExcelHeaderInfo {
 
